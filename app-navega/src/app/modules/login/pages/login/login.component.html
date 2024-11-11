@@ -1,0 +1,55 @@
+<div class="flex flex-column md:flex-row min-h-screen">
+  <div class="flex flex-column align-items-center justify-content-center md:col-4 p-6 p-4">
+    <img src="assets/images/logo-navega.png" alt="Logo Navega" class="mb-4" />
+    <section class="md:col-10 text-center">
+      <p class="font-semibold text-base">
+        Boas-vindas ao Portal! <br />
+        Para começar, qual seu email ou CPF?
+      </p>
+      <p class="text-sm">
+        Precisamos desta confirmação para dar início ao seu acesso.
+      </p>
+
+      <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <div class="w-full mt-6 relative">
+          <span class="w-full">
+            <label for="emailCpf" class="text-sm block text-left">Email ou CPF</label>
+            <input id="emailCpf" type="text" pInputText formControlName="emailCpf"
+              class="p-inputtext p-component w-full border-bottom-only pl-0 pr-8" placeholder="Digite seu email ou CPF"
+              (input)="onEmailCpfInput($event)" />
+            <i *ngIf="hasValue('emailCpf')" class="pi pi-check absolute" style="right: 8px; top: 33px;"></i>
+          </span>
+        </div>
+        <div class="w-full mt-4 relative">
+          <label for="password" class="text-sm block text-left">Senha</label>
+          <input id="password" [type]="isPasswordVisible ? 'text' : 'password'" pInputText formControlName="senha"
+            class="p-inputtext p-component w-full border-bottom-only pl-0 pr-8" placeholder="Digite sua senha" />
+          <i class="pi" [ngClass]="isPasswordVisible ? 'pi-eye-slash' : 'pi-eye'" (click)="togglePasswordVisibility()"
+            style="right: 8px; top: 33px; cursor: pointer; position: absolute;"></i>
+        </div>
+
+        <div class="mt-6 mb-3 w-full">
+          <button pButton type="submit" label="ACESSAR" class="p-button p-button-primary w-full mt-8"></button>
+        </div>
+      </form>
+
+
+      <span class="text-sm">
+        Esqueceu a senha?
+        <a href="#" class="text-cyan-600 mt-3 no-underline">Acesse aqui</a></span>
+      <p class="text-sm mt-3">Verrsão {{ version }}</p>
+    </section>
+
+  </div>
+
+  <div class="hidden md:flex md:col-8 bg-cover bg-center relative" style="background-image: url('assets/images/bg-login.png'); background-size: contain; background-position: center;">
+    <div class="absolute inset-0 bg-overlay"></div>
+    <div class="flex align-items-start justify-content-center w-full relative z-10">
+      <div class="text-center text-white">
+        <img src="assets/images/dashboard-login.png" alt="Dashboard Preview" class="w-10" />
+        <p>Bem-vindo ao seu novo Dashboard</p>
+      </div>
+    </div>
+  </div>
+
+</div>

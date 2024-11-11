@@ -1,0 +1,18 @@
+<div class="text-center my-5">
+  <i class="pi pi-id-card font-light text-5xl text-primary"></i>
+  <h3 class="text-base font-semibold p-0 m-0">Meu plano</h3>
+  <p class="text-sm p-0 m-0">O que você quer fazer?</p>
+</div>
+
+<ng-container *ngFor="let item of menuItems; let last = last">
+  <div class="flex p-ai-center p-jc-between border-bottom-1 surface-border py-3" style="cursor: pointer; padding: 12px 0; white-space: nowrap;">
+    <div class="flex p-ai-center text-sm" style="flex: 1; min-width: 0;">
+      <i [class]="item.icon" [ngClass]="{'text-primary': item.active}" class="mr-3 text-xl"></i>
+      <span [ngClass]="{'text-primary': item.active, 'font-italic': last}" class="ellipsis">
+        {{ item.label }}
+      </span>
+    </div>
+    <i class="pi pi-angle-right text-xl" [ngClass]="{'text-primary': item.active}" style="flex-shrink: 0;"></i>
+  </div>
+</ng-container>
+

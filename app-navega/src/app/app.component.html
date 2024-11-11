@@ -1,0 +1,8 @@
+<ng-container *ngIf="isLogged">
+  <app-header></app-header>
+  <app-sub-header [titulo]="'Meu Plano'"></app-sub-header>
+</ng-container>
+
+<div [ngClass]="isLogged ? 'scroll' : ''">
+  <router-outlet></router-outlet>
+</div>

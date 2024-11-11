@@ -1,0 +1,15 @@
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .hidden-mobile {
+    display: none;
+  }
+
+  .full-width-mobile {
+    width: 100%;
+  }
+}

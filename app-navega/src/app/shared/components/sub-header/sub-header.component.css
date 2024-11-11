@@ -1,0 +1,17 @@
+.sub-header-container {
+  padding: 10px 20px;
+  background-color: transparent;
+}
+
+.sub-header-title {
+  color: #333;
+  font-size: 1.2em;
+  margin: 0;
+  font-weight: 400;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 10px 0;
+}

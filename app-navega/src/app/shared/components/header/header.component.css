@@ -1,0 +1,16 @@
+.header-container {
+  background-color: #21232A;
+  height: 80px;
+}
+
+.content-container {
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color: transparent !important;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
